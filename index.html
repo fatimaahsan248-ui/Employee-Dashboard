@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Employee management dashboard">
+
+    <title>Employee Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-white shadow p-4">
+
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+
+            <h1 class="text-xl font-bold text-blue-600">
+                Employee Portal
+            </h1>
+
+            <button onclick="showPage('profile')"
+                class="text-blue-600">
+                My Profile
+            </button>
+
+        </div>
+
+    </header>
+    <nav class="bg-white border-b">
+
+        <div class="max-w-6xl mx-auto p-3 flex gap-4 flex-wrap">
+
+            <button onclick="showPage('home')" class="nav-btn">
+                Home
+            </button>
+
+            <button onclick="showPage('employee')" class="nav-btn">
+                Employee Detail
+            </button>
+
+            <button onclick="showPage('profile')" class="nav-btn">
+                Profile
+            </button>
+
+            <button onclick="showPage('statement')" class="nav-btn">
+                Statement
+            </button>
+
+            <button onclick="showPage('dashboard')" class="nav-btn">
+                Dashboard
+            </button>
+
+        </div>
+
+    </nav>
+    <main class="max-w-6xl mx-auto p-6">
+
+
+        <section id="home" class="page">
+
+            <h2 class="text-3xl font-bold mb-2">
+                Welcome Back!
+            </h2>
+
+            <p class="text-gray-500 mb-6">
+                Manage your employee information easily.
+            </p>
+
+
+            <div class="grid md:grid-cols-3 gap-5">
+
+                <div class="card" onclick="showPage('dashboard')">
+                    <h3>Dashboard</h3>
+                    <p>View your work statistics.</p>
+                </div>
+
+                <div class="card" onclick="showPage('employee')">
+                    <h3>Employee Detail</h3>
+                    <p>View employee information.</p>
+                </div>
+
+                <div class="card" onclick="showPage('statement')">
+                    <h3>Statement</h3>
+                    <p>View salary statement.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="employee" class="page hidden">
+
+            <div class="box">
+
+                <h2 class="title">
+                    Employee Detail
+                </h2>
+
+
+                <div class="grid md:grid-cols-2 gap-5">
+
+                    <div>
+                        <b>Name</b>
+                        <p>Fatima Ahsan</p>
+                    </div>
+
+                    <div>
+                        <b>Employee ID</b>
+                        <p>EMP-1025</p>
+                    </div>
+
+                    <div>
+                        <b>Department</b>
+                        <p>Software Development</p>
+                    </div>
+
+                    <div>
+                        <b>Position</b>
+                        <p>Web Developer</p>
+                    </div>
+
+                    <div>
+                        <b>Email</b>
+                        <p>employee@example.com</p>
+                    </div>
+
+                    <div>
+                        <b>Status</b>
+                        <p class="text-green-600">
+                            Active
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section id="profile" class="page hidden">
+
+            <div class="box">
+
+                <h2 class="title">
+                    My Profile
+                </h2>
+
+                <div class="space-y-4">
+                    <input
+                        class="input"
+                        value="Fatima Ahsan"
+                        placeholder="Name">
+                    <input
+                        class="input"
+                        value="employee@example.com"
+                        placeholder="Email">
+                    <input
+                        class="input"
+                        value="Software Development"
+                        placeholder="Department">
+                    <input
+                        class="input"
+                        value="Web Developer"
+                        placeholder="Position">
+
+
+                    <button class="btn">
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="statement" class="page hidden">
+
+            <div class="box overflow-x-auto">
+
+                <h2 class="title">
+                    Salary Statement
+                </h2>
+
+
+                <table class="w-full text-left">
+
+                    <thead>
+
+ <tr class="border-b">
+
+<th class="p-3">
+      Month
+    </th>
+
+  <th class="p-3">
+ Basic Salary
+ </th>
+
+ <th class="p-3">
+  Bonus
+</th>
+
+<th class="p-3">
+ Total
+</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr class="border-b">
+
+<td class="p-3">
+June
+</td>
+
+<td class="p-3">
+$2,000
+</td>
+
+                            <td class="p-3">
+                                $200
+                            </td>
+
+                            <td class="p-3">
+                                $2,200
+                            </td>
+
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">
+                                July
+                            </td>
+                            <td class="p-3">
+                                $2,000
+                            </td>
+                            <td class="p-3">
+                                $150
+                            </td>
+                            <td class="p-3">
+                                $2,150
+                            </td>
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="p-3">
+                                August
+                            </td>
+
+                            <td class="p-3">
+                                $2,000
+                            </td>
+
+                            <td class="p-3">
+                                $250
+                            </td>
+
+                            <td class="p-3">
+                                $2,250
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section id="dashboard" class="page hidden">
+
+            <h2 class="text-2xl font-bold mb-5">
+                Dashboard
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+                <div class="stat">
+                    <p>Working Hours</p>
+                    <h3>160</h3>
+                </div>
+
+                <div class="stat">
+                    <p>Present Days</p>
+                    <h3>22</h3>
+                </div>
+
+                <div class="stat">
+                    <p>Leave Days</p>
+                    <h3>3</h3>
+                </div>
+
+                <div class="stat">
+                    <p>Total Tasks</p>
+                    <h3>28</h3>
+                </div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="box">
+
+                    <h3 class="font-bold mb-3">
+                        Working Hours
+                    </h3>
+
+                    <canvas id="hoursChart"></canvas>
+
+                </div>
+                <div class="box">
+
+                    <h3 class="font-bold mb-3">
+                        Attendance
+                    </h3>
+                    <canvas id="attendanceChart"></canvas>
+
+                </div>
+
+            </div>
+            <div class="mt-6 flex gap-3 flex-wrap">
+
+                <button onclick="openHours()" class="btn">
+                    Hours Distribution
+                </button>
+
+                <button onclick="openHR()" class="btn">
+                    HR Talk
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="hoursModal"
+        class="modal">
+
+        <div class="modal-box">
+
+            <button onclick="closeHours()"
+                class="float-right text-2xl">
+                ×
+            </button>
+
+            <h2 class="text-xl font-bold mb-5">
+                Hours Distribution
+            </h2>
+
+            <p>Office Work: 120 hours</p>
+            <p>Meetings: 20 hours</p>
+            <p>Training: 12 hours</p>
+            <p>Other: 8 hours</p>
+
+        </div>
+
+    </div>
+
+    <div id="hrModal"
+        class="modal">
+
+        <div class="modal-box">
+
+            <button onclick="closeHR()"
+                class="float-right text-2xl">
+                ×
+            </button>
+
+            <h2 class="text-xl font-bold mb-5">
+                HR Talk
+            </h2>
+
+            <textarea
+                class="w-full border rounded-lg p-3"
+                rows="4"
+                placeholder="Write your message..."></textarea>
+
+            <button class="btn mt-3">
+                Send Message
+            </button>
+
+        </div>
+
+    </div>
+
+    <style>
+
+        .page {
+            min-height: 400px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #ddd;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .stat {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .stat h3 {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .nav-btn {
+            padding: 8px 12px;
+            color: #374151;
+        }
+
+        .nav-btn:hover {
+            color: #2563eb;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+    </style>
+
+    <script>
+
+        // Show pages
+        function showPage(page) {
+
+            document.querySelectorAll(".page")
+                .forEach(function(section) {
+                    section.classList.add("hidden");
+                });
+
+            document.getElementById(page)
+                .classList.remove("hidden");
+        }
+
+        function openHours() {
+            document.getElementById("hoursModal")
+                .style.display = "flex";
+        }
+
+        function closeHours() {
+            document.getElementById("hoursModal")
+                .style.display = "none";
+        }
+
+        function openHR() {
+            document.getElementById("hrModal")
+                .style.display = "flex";
+        }
+
+        function closeHR() {
+            document.getElementById("hrModal")
+                .style.display = "none";
+        }
+        new Chart(document.getElementById("hoursChart"), {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "Office",
+                    "Meetings",
+                    "Training",
+                    "Other"
+                ],
+
+                datasets: [{
+
+                    label: "Hours",
+
+                    data: [
+                        120,
+                        20,
+                        12,
+                        8
+                    ]
+
+                }]
+
+            }
+
+        });
+
+        new Chart(document.getElementById("attendanceChart"), {
+
+            type: "doughnut",
+
+            data: {
+
+                labels: [
+                    "Present",
+                    "Leave"
+                ],
+
+                datasets: [{
+
+                    data: [
+                        22,
+                        3
+                    ]
+
+                }]
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+
